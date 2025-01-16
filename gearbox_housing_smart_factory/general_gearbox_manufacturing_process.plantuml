@@ -1,0 +1,45 @@
+@startuml Gearbox Manufacturing process
+
+start
+
+title Gearbox Housing Manufacturing Process General Overview
+
+:Vendor Selection;
+:Order Placement;
+:Delivery Coordination;
+
+:Receipt of Materials;
+:Quality Checks;
+if (Material Conforms?) then (Yes)
+  :Approve Materials;
+else (No)
+  :Handle Non-Conformance;
+endif
+
+:Inventory Classification;
+:Inventory Placement;
+:Stock Monitoring;
+
+:Cutting;
+:Shaping;
+:Pre-Treatment;
+
+:Mold Preparation;
+:Casting;
+:Machining;
+
+:Sub-Component Preparation;
+:Assembly Operations;
+:Fastening and Sealing;
+
+:Dimensional Accuracy Testing;
+:Stress Testing;
+:Visual and Functional Inspections;
+:Final Approval;
+
+:Finishing (e.g., Coating and Marking);
+:Packaging and Shipping;
+
+stop
+
+@enduml
