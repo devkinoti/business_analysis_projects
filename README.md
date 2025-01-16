@@ -1,5 +1,76 @@
 # Business Analysis Portfolio projects
 
+
+# NutritionLedger: Consultation Log Management System
+
+## Overview
+
+NutritionLedger provides a comprehensive system for managing client consultations, including detailed records of interactions, health metrics, and tailored recommendations.
+
+---
+
+## Key Features
+
+### **Consultation Logs**
+- **Details**: Tracks date, time, mode, and duration of consultations.
+- **Health Metrics**: Records weight, BMI, blood pressure, and more.
+- **Session Notes**: Allows free-text and structured observations.
+- **Plans & Recommendations**:
+  - Custom and pre-made diet/workout plans.
+  - Supplement, lifestyle, and referral recommendations.
+- **Follow-Ups**:
+  - Task scheduling, reminders, and notifications.
+  - Tracks client feedback and urgent flags.
+
+### **Management Tools**
+- Create, view, update, delete, and duplicate consultation logs.
+- Search and filter logs by various criteria.
+- Export logs to PDF or share securely.
+
+---
+
+## Models and Database Design
+
+### **Normalization and Structure**
+- **Central Model**: `ConsultationLog` linked with supporting models:
+  - `SessionNote`, `HealthMetric`, `DietPlan`, `WorkoutPlan`, `Attachment`, etc.
+- Ensures minimal redundancy (1NF, 2NF, 3NF compliance).
+
+### **Core Models**
+- `ConsultationLog`: Tracks consultation details.
+- `SessionNote`: Stores notes and observations.
+- `HealthMetric`: Records specific health data.
+- Additional models for recommendations, plans, follow-ups, and feedback.
+
+### **Constraints and Indexing**
+- Foreign keys, enums for structured data, and validation rules.
+- Indexes for performance optimization.
+
+---
+
+## Functional Workflow
+
+### **User Actions**
+1. **Log Creation**: Add all consultation details, metrics, and plans.
+2. **Editing Logs**: Modify existing entries.
+3. **Deleting Logs**: Remove unnecessary records with confirmation.
+4. **Viewing Logs**: Access detailed views or summaries.
+5. **Searching/Sorting**: Locate logs by date, status, or keywords.
+
+### **Data Operations**
+- Export logs for sharing or offline use.
+- Import bulk data (e.g., CSV, Excel).
+- Support for secure email sharing of consultation data.
+
+---
+
+## Developer Tools
+
+### **Rails Commands**
+- Generate models for `ConsultationLog`, `SessionNote`, etc.
+
+---
+
 # Smart Factory Implementation for Gearbox Housing Inc.
 
 ## Overview
