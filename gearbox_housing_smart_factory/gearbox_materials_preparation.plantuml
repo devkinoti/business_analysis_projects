@@ -1,0 +1,18 @@
+@startuml Material Preparation Process
+
+title Material Preparation Process
+
+start
+
+:Cut Materials;
+:Ensure Precision;
+
+:Shape Materials;
+:Monitor Machinery;
+
+:Apply Surface Treatments;
+:Perform Quality Checks;
+
+stop
+
+@enduml
