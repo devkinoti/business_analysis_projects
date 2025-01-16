@@ -1,0 +1,18 @@
+@startuml Gearbox inc materials storage process
+
+title Storage Process
+
+start
+
+:Categorize Materials;
+:Assign Storage Locations;
+
+:Store Materials;
+:Label and Tag;
+
+:Conduct Inventory Audits;
+:Track Usage Levels;
+
+stop
+
+@enduml
