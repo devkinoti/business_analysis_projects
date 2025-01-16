@@ -105,5 +105,45 @@ This document provides a summary of the key phases involved in the manufacturing
 
 ---
 
-## Usage
-This README serves as a high-level reference for understanding the core processes at Gearbox Housing Inc.
+
+# Sales Visual Dashboards: Business Analysis and Development
+
+## Project Overview
+
+This project focuses on transforming traditional static sales reports into dynamic, interactive visual dashboards. The initiative aims to enhance decision-making capabilities across multiple departments by providing real-time insights into sales performance, customer trends, and product success.
+
+---
+
+## Key Objectives
+
+- **Enhance Sales Analysis**: Enable real-time comparisons of sales performance against historical data and budgets.
+- **Support Decision-Making**: Provide tools for analyzing trends, high-performing products, and customer segments.
+- **Streamline Operations**: Automate data visualization to save time and reduce reporting errors.
+
+---
+
+## Target Users
+
+- **Sales Department**: Managers, representatives, and regional leads tracking performance and strategizing improvements.
+- **Marketing**: Analysts and product marketers refining campaigns and targeting efforts.
+- **Finance**: Budget controllers and financial analysts aligning performance with forecasts.
+- **Operations**: Supply chain and logistics teams optimizing inventory and distribution.
+- **Customer Service**: Account managers and success teams enhancing client relationships.
+- **R&D**: Product teams identifying improvement opportunities.
+
+---
+
+## Features and Requirements
+
+### Functional Requirements
+
+1. **Interactive Visualizations**: Charts, graphs, and maps with drill-down capabilities by region, product, or time period.
+2. **Data Filtering**: Real-time segmentation by salesperson, client, product, or budget.
+3. **Real-Time Updates**: Instant reflection of the latest data.
+4. **Budget Integration**: Performance tracking against 2024 goals with KPIs.
+5. **Export Options**: PDF, Excel, and CSV formats for offline sharing.
+
+
+## Tools and Technologies
+
+- **BI Platforms and other tools used**: Microsoft Power BI, TSQL, SSMS, Excel
