@@ -1,0 +1,27 @@
+@startuml Gearbox Raw material procurement
+
+title Raw Material Procurement Process
+
+start
+
+:Evaluate Vendors;
+:Assess Certifications;
+:Negotiate Contracts;
+:Reassess Vendors;
+:Generate POs;
+if (Details Confirmed?) then (Yes)
+  :Confirm Details;
+else (No)
+  :Revise Order;
+endif
+
+:Coordinate Logistics;
+if (Shipment On Time?) then (Yes)
+  :Track Shipments;
+else (No)
+  :Resolve Delays;
+endif
+
+stop
+
+@enduml
