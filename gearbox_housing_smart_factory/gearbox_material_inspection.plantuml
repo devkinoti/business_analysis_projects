@@ -1,0 +1,23 @@
+@startuml Material Inspection Process
+
+title Material Inspection Process
+
+start
+
+:Unload Materials;
+:Cross-check Items;
+
+:Visual Inspections;
+:Perform Tests;
+:Document Results;
+
+if (Materials Compliant?) then (Yes)
+  :Approve Materials;
+else (No)
+  :Isolate Materials;
+  :Initiate Return;
+endif
+
+stop
+
+@enduml
