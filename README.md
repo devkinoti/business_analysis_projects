@@ -1,5 +1,52 @@
 # Business Analysis Portfolio projects
 
+# Table of Contents
+
+- [Business Analysis Portfolio Projects](#business-analysis-portfolio-projects)
+  - [NutritionLedger: Consultation Log Management System](#nutritionledger-consultation-log-management-system)
+    - [Overview](#overview)
+    - [Key Features](#key-features)
+      - [Consultation Logs](#consultation-logs)
+      - [Management Tools](#management-tools)
+    - [Models and Database Design](#models-and-database-design)
+      - [Normalization and Structure](#normalization-and-structure)
+      - [Core Models](#core-models)
+      - [Constraints and Indexing](#constraints-and-indexing)
+    - [Functional Workflow](#functional-workflow)
+      - [User Actions](#user-actions)
+      - [Data Operations](#data-operations)
+    - [Developer Tools](#developer-tools)
+  - [Smart Factory Implementation for Gearbox Housing Inc.](#smart-factory-implementation-for-gearbox-housing-inc)
+    - [Overview](#overview-1)
+    - [Objectives](#objectives)
+    - [Key Features](#key-features-1)
+      - [IoT Integration](#iot-integration)
+      - [Automation](#automation)
+      - [Advanced Analytics](#advanced-analytics)
+    - [Expected Benefits](#expected-benefits)
+      - [Financial](#financial)
+      - [Non-Financial](#non-financial)
+    - [Risks and Mitigation](#risks-and-mitigation)
+    - [Conclusion](#conclusion)
+  - [Gearbox Housing Manufacturing Process](#gearbox-housing-manufacturing-process)
+    - [Overview](#overview-2)
+    - [Phases in the Manufacturing Process](#phases-in-the-manufacturing-process)
+      - [Procurement and Preparation](#1-procurement-and-preparation)
+      - [Manufacturing](#2-manufacturing)
+      - [Assembly](#3-assembly)
+      - [Testing and Quality Control](#4-testing-and-quality-control)
+      - [Finishing](#5-finishing)
+      - [Packaging and Shipping](#6-packaging-and-shipping)
+    - [Key Highlights](#key-highlights)
+  - [Sales Visual Dashboards: Business Analysis and Development](#sales-visual-dashboards-business-analysis-and-development)
+    - [Project Overview](#project-overview)
+    - [Key Objectives](#key-objectives)
+    - [Target Users](#target-users)
+    - [Features and Requirements](#features-and-requirements)
+      - [Functional Requirements](#functional-requirements)
+    - [Tools and Technologies](#tools-and-technologies)
+
+
 
 # NutritionLedger: Consultation Log Management System
 
