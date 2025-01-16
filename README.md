@@ -106,8 +106,4 @@ This document provides a summary of the key phases involved in the manufacturing
 ---
 
 ## Usage
-This README serves as a high-level reference for understanding the core processes at Gearbox Housing Inc. For more details, refer to the full process map documentation.
-
----
-
-For inquiries or further information, contact **Gearbox Housing Inc. Operations Team**.
+This README serves as a high-level reference for understanding the core processes at Gearbox Housing Inc.
