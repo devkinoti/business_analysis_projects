@@ -1,0 +1,35 @@
+@startuml Healthcare EDI system architecture
+node "API Gateway" as APIGateway {
+    [Handles incoming requests]
+    [Routes to backend services]
+}
+
+node "EDI Translator" as Translator {
+    [Maps internal formats to EDI X12]
+    [Transforms EDI X12 to internal formats]
+}
+
+node "ESB" as ESB {
+    [Orchestrates workflows]
+    [Manages message routing]
+    [Handles error recovery]
+}
+
+node "Secure Communication Layer" as CommunicationLayer {
+    [Facilitates secure file transfers]
+    [Supports AS2, SFTP, HTTPS]
+}
+
+database "Database" as Database {
+    [Stores transaction logs]
+    [Maintains mappings/configurations]
+    [Tracks acknowledgments]
+}
+
+APIGateway --> ESB
+ESB --> Translator
+ESB --> CommunicationLayer
+CommunicationLayer --> Translator
+ESB --> Database
+Database --> APIGateway
+@enduml

@@ -1,0 +1,17 @@
+@startuml Healthcare EDI Integration
+left to right direction
+actor "Health Plan or Employer" as Requestor
+
+rectangle "EDI System" {
+  usecase "Request PHR Transfer (POST /api/phr-transfer)" as RequestPHR
+  usecase "Validate and Convert to X12 275 Format" as ValidateAndConvert
+  usecase "Transmit PHR to Requested Entity" as TransmitPHR
+  usecase "Log Acknowledgments and Share with Requestor" as LogAndShare
+}
+
+Requestor --> RequestPHR
+RequestPHR --> ValidateAndConvert
+ValidateAndConvert --> TransmitPHR
+TransmitPHR --> LogAndShare
+LogAndShare --> Requestor
+@enduml

@@ -1,0 +1,18 @@
+@startuml Healthcare EDI Integration
+left to right direction
+actor "Healthcare Provider" as Provider
+
+rectangle "EDI System" {
+  usecase "Submit Enrollment Details (POST /api/enrollment)" as SubmitEnrollment
+  usecase "Validate Enrollment Data" as ValidateEnrollment
+  usecase "Convert to X12 834 Format" as MapData
+  usecase "Transmit to Provider via AS2" as TransmitToPayer
+
+}
+
+Provider --> SubmitEnrollment
+SubmitEnrollment --> ValidateEnrollment
+ValidateEnrollment --> MapData
+MapData --> TransmitToPayer
+TransmitToPayer -->  Provider
+@enduml

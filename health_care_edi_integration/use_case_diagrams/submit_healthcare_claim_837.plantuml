@@ -1,0 +1,20 @@
+@startuml Healthcare EDI Integration
+left to right direction
+actor "Healthcare Provider" as Provider
+rectangle "EDI System" {
+  usecase "Submit claim (POST /api/claims)" as SubmitClaim
+  usecase "Validate Claim Data (SNIP levels 1 - 7)" as ValidateData
+  usecase "Map JSON to X12 (ITX/ITXA)" as MapData
+  usecase "Transmit Claim via AS2" as TransmitClaim
+  usecase "Log and Return Acknowledgement (997/999)" as ReturnAcknowledgement
+
+}
+
+Provider --> SubmitClaim
+SubmitClaim --> ValidateData
+ValidateData --> MapData
+MapData --> TransmitClaim
+TransmitClaim --> ReturnAcknowledgement
+ReturnAcknowledgement --> Provider
+
+@enduml

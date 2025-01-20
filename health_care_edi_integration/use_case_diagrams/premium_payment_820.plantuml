@@ -1,0 +1,17 @@
+@startuml Healthcare EDI Integration
+left to right direction
+actor "Employer or Government Agency" as Employer
+
+rectangle "EDI System" {
+  usecase "Submit Premium Payment Details (POST /api/premiums)" as SubmitPayment
+  usecase "Validate and Convert to X12 820 Format" as ValidateAndConvert
+  usecase "Transmit Payment to Payer" as TransmitPayment
+  usecase "Log Acknowledgments and Return to Employer" as LogAndReturn
+}
+
+Employer --> SubmitPayment
+SubmitPayment --> ValidateAndConvert
+ValidateAndConvert --> TransmitPayment
+TransmitPayment --> LogAndReturn
+LogAndReturn --> Employer
+@enduml

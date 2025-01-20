@@ -1,0 +1,17 @@
+@startuml Healthcare EDI Integration
+left to right direction
+actor "Health Plan or Payer" as Payer
+
+rectangle "EDI System" {
+  usecase "Submit Fee Schedule (POST /api/fees)" as SubmitFees
+  usecase "Validate and Convert to X12 832 Format" as ValidateAndConvert
+  usecase "Transmit Fee Schedule to Providers" as TransmitFees
+  usecase "Log Errors and Acknowledgments" as LogAndReport
+}
+
+Payer --> SubmitFees
+SubmitFees --> ValidateAndConvert
+ValidateAndConvert --> TransmitFees
+TransmitFees --> LogAndReport
+LogAndReport --> Payer
+@enduml

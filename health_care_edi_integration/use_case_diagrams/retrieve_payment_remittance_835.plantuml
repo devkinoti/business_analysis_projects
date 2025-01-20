@@ -1,0 +1,19 @@
+@startuml Healthcare EDI integration
+left to right direction
+actor "HealthCare Provider" as HealthCareProvider
+
+rectangle "EDI system" {
+  usecase "Query Remittance Data (GET /api/remittances)" as QueryRemittance
+  usecase "Retrieve X12 835 Files" as RetrieveFiles
+  usecase "Map X12 to JSON (ITX)" as MapData
+  usecase "Return Data to Provider" as ReturnData
+
+}
+
+HealthCareProvider --> QueryRemittance
+QueryRemittance --> RetrieveFiles
+RetrieveFiles --> MapData
+MapData --> ReturnData
+ReturnData --> HealthCareProvider
+
+@enduml

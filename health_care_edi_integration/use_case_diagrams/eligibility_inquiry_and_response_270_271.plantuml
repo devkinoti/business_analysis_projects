@@ -1,0 +1,21 @@
+@startuml Healthcare EDI Integration
+left to right direction
+actor "Healthcare Provider" as Provider
+
+rectangle "EDI System" {
+  usecase "Submit Eligibility Inquiry (POST /api/eligibility)" as SubmitInquiry
+  usecase "Validate Request and Convert to X12 270" as ValidateAndConvert
+  usecase "Transmit Inquiry to Payer via AS2" as TransmitInquiry
+  usecase "Receive X12 271 Eligibility Response" as ReceiveResponse
+  usecase "Map 271 Data to JSON (ITX)" as MapToJSON
+  usecase "Return Eligibility Details to Provider" as ReturnDetails
+}
+
+Provider --> SubmitInquiry
+SubmitInquiry --> ValidateAndConvert
+ValidateAndConvert --> TransmitInquiry
+TransmitInquiry --> ReceiveResponse
+ReceiveResponse --> MapToJSON
+MapToJSON --> ReturnDetails
+ReturnDetails --> Provider
+@enduml
