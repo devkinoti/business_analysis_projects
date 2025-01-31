@@ -1,0 +1,14 @@
+determine the second lowest silver plan for a group of zip codes
+
+csv file slscp.csv contains zip codes in the first column. Fill in the second column with the rate of the corresponding 
+slscp and emit the answer on stdout using the same csv format as the input.
+
+The order of the rows must be the stay the same as they appeared in the original slcsp.csv
+
+first row - column headers: zipcode, rate 
+
+output unquoted values with two digits after the decimal place of the rates 65500.20
+
+if there is only one slcsp,there is no second lowest cost plan - leave these cells blank
+
+if a rate area had silver plans with rates of [197.3 197.3 201.1 305.4 306 411.24] the second lowest rate is 201.1

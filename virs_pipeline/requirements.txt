@@ -1,0 +1,91 @@
+VIRS pipeline
+
+Process vehicle inspection reports to infer the state of dimensional tables
+
+vehicle fleet inspection data to populate analytics dashboard - pattern info
+
+
+* monthly vehicle inspection records
+
+ process those dumps into a separate data store
+
+1. who is getting vehicles and inspections
+2. whether they're passing those inspections.
+
+vir_<year><month>.csv
+
+(how to check whether this file has been imported or not, or previously imported)
+
+code or scripts necessary to process all dump files in order, 
+updating and adding data until we have a data store that describes:
+ 1. the current state of inspections
+ 2. vehicles that were inspected, 
+ 3. the organizations that own them. 
+
+Once all data has been processed, write to disk the MVP report we need the data to be able to produce.
+
+The MVP report is a tab-separated values (TSV) file, with headers, named virs_report.tsv 
+that gives statistics on the three organizations with the highest fraction of vehicles 
+that failed their last adjudicated inspection.
+
+MVP report:
+
+org_name: The names of the organizations as inferred from the VIR files.
+tot_v: How many vehicles with inspections exist in those organizations as aggregated from the three dumps we have.
+failed_v: How many vehicles in those organizations are currently in a failed state.
+
+
+Business logic notes
+
+vehicle_id + inspection_date define a unique inspection report and can be considered a compound primary key.
+
+This is the MVP question we’ll be asking of the data, but that there are expected to be more, 
+so it's better if the data is structured to make that easy.
+
+We do not care about and do not want to retain past states of the data (i.e. we don’t need a time series table)
+
+Vehicles and organizations can change over time, but their IDs will remain the same
+
+Once a vehicle's inspection is conducted, the vehicle is considered inspected and gets an inspection record. 
+However, the inspection can go through an adjudication process which can prevent the inspection record from having a 
+result value in inspection_passed. 
+Also, re-adjudications can change the result of a previously-adjudicated inspection.
+
+The information in the latest inspection report pertaining to a vehicle or an organization is authoritative. 
+For example, if an inspection report indicates that a vehicle belongs to a different organization, 
+we must interpret that as the vehicle having been transferred between organizations.
+
+Until a new inspection result is indicated, the previous inspection result continues to apply. 
+There can be long delays between when an inspection is conducted, and when a result is updated to 
+passing or failing, so each successive dump is likely to update a few inspection records received in previous dumps.
+
+In a given inspection record, only inspection_passed is ever updated, so 
+changes to vehicles or organizations can only be inferred from subsequent inspection records.
+
+
+=======
+
+write an app that takes in csv data and outputs tsv data
+
+requires database - postgresql
+
+The prime focus of this homework is the data logic and structures.
+
+The secondary focus is ingestion and export of data from the data store.
+
+Include complete instructions for the installation and setup of any less common 
+software framework and/or data store necessary for the code to run.
+
+Managing security and users or anything else besides processing the data is not part of the homework, 
+so please keep setup simple.
+
+The input files are formatted as double-quote quoted CSVs in which literal double-quotes are doubled (i.e. ""). 
+The delimiter is a pipe (|) character. Each file has its own header.
+
+
+# general solution
+# store everything in active storage local 
+# import according to order 
+# add the dumps to one database and order before importing
+# display the entire setup of data 
+# do calculations and display or export results

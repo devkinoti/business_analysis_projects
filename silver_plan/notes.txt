@@ -1,0 +1,83 @@
+SELECT name FROM sqlite_master WHERE type='table' AND name='{table_name}';
+
+before running create and import check if the table already exists
+
+SQLiteDatabase db = table.getWritableDatabase();
+String count = "SELECT count(*) FROM table";
+Cursor mcursor = db.rawQuery(count
+
+
+check the count if database table is empty - if empty - exit 
+
+or simply drop tables on exit
+
+
+You can also view the data as a table in terminal
+
+class Array
+  def to_table(header: true)
+    column_sizes = self.reduce([]) do |lengths, row|
+      row.each_with_index.map{|iterand, index| [lengths[index] || 0, iterand.to_s.length].max}
+    end
+    head = '+' + column_sizes.map{|column_size| '-' * (column_size + 2) }.join('+') + '+'
+    puts head
+
+    to_print = self.clone
+    if (header == true)
+      header = to_print.shift
+      print_table_data_row(column_sizes, header)
+      puts head
+    end
+    to_print.each{ |row| print_table_data_row(column_sizes, row) }
+    puts head
+  end
+
+  private
+  def print_table_data_row(column_sizes, row)
+    row = row.fill(nil, row.size..(column_sizes.size - 1))
+    row = row.each_with_index.map{|v, i| v = v.to_s + ' ' * (column_sizes[i] - v.to_s.length)}
+    puts '| ' + row.join(' | ') + ' |'
+  end
+end
+
+
+result
+
+data = [
+  ['column 1', 'column 2', 'ciolumn 3'],
+  ['row 1 col 2', 'row 1 col 2', 'row 1 col 3'],
+  ['row 1 col 2', 'row 1 col 2', 'row 1 col 3']
+]
+
+data.to_table
++-------------+-------------+-------------+
+| column 1    | column 2    | ciolumn 3   |
++-------------+-------------+-------------+
+| row 1 col 2 | row 1 col 2 | row 1 col 3 |
+| row 1 col 2 | row 1 col 2 | row 1 col 3 |
++-------------+-------------+-------------+
+
+
+data.to_table(header: false)
++-------------+-------------+-------------+
+| column 1    | column 2    | ciolumn 3   |
+| row 1 col 2 | row 1 col 2 | row 1 col 3 |
+| row 1 col 2 | row 1 col 2 | row 1 col 3 |
++-------------+-------------+-------------+
+
+
+
+The goal therefore is to have a join table between
+plans and zips
+
+plans table
+plan_id, state, metal_level, rate, rate_area
+
+zips_table
+zipcode, state,county_code,name,rate_area
+
+result 
+slscp table 
+zipcode, rate 
+
+then get the second lowest silver plan (metal level is silverplan)
